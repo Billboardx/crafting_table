@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crafting Table</title>
+  <link id="icons-base" rel="stylesheet">
+  <link id="icons-solid" rel="stylesheet">
+  <link id="icons-regular" rel="stylesheet">
+  <link id="icons-brands" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app" hidden>
+  <section class="workspace">
+    <header>
+      <div><span class="eyebrow">WORKSHOP / BLUEPRINT CRAFTING</span><h1>CRAFTING</h1></div>
+      <div class="header-right">
+        <div class="header-stat"><span class="eyebrow">WORKSTATION</span><strong id="station"></strong></div>
+        <div class="header-stat"><span class="eyebrow">LEARNED BLUEPRINTS</span><strong id="recipe-count"></strong></div>
+        <div class="header-stat level-stat">
+          <span class="eyebrow">CRAFTING LEVEL</span>
+          <div class="level-track" role="progressbar" aria-label="XP to next level" aria-valuemin="0">
+            <span id="level-fill" class="level-fill"></span>
+            <div class="level-content"><strong id="level"></strong><span id="level-xp"></span></div>
+            <div class="level-content level-content-filled" aria-hidden="true"><strong id="level-filled"></strong><span id="level-xp-filled"></span></div>
+          </div>
+        </div>
+        <button id="close" class="icon-button" aria-label="Close workshop">×</button>
+      </div>
+    </header>
+    <div class="board">
+      <aside class="category-section"><div class="section-label"><span>01</span> CATEGORIES</div><nav id="categories" aria-label="Recipe categories"></nav></aside>
+      <section class="recipe-section">
+        <div class="section-label"><span>02</span> LEARNED BLUEPRINTS</div>
+        <div class="heading"><div><h2 id="category-title"></h2><p id="category-subtitle"></p></div><span class="heading-hint">SELECT A RECIPE</span></div>
+        <div id="recipes" class="recipes" aria-label="Learned recipes"></div>
+      </section>
+    </div>
+    <footer><button id="back" class="text-button"><kbd>ESC</kbd> BACK</button><span>LEARN BLUEPRINTS IN YOUR SKILL TREE</span><button id="skills" class="text-button">SKILL TREE →</button><button id="refresh" class="text-button">↻ REFRESH</button></footer>
+  </section>
+  <aside class="details" aria-label="Crafting queue and selected recipe">
+    <section class="queue-section" aria-label="Crafting queue">
+      <div class="queue-heading"><span>CRAFTING QUEUE</span><span id="queue-count"></span></div>
+      <div id="queue"></div>
+      <button id="collect" class="craft-button collect-button" disabled>COLLECT ITEMS</button>
+      <p id="collect-hint" class="collect-hint"></p>
+    </section>
+    <div id="details"></div>
+  </aside>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
